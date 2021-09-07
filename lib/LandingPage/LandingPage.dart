@@ -13,7 +13,7 @@ class LandingPage extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 45.0,
-                  color: Colors.blueGrey[800]),
+                  color: Color(0xFF0c4004)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -28,14 +28,16 @@ class LandingPage extends StatelessWidget {
                     
                     Click here to see current volunteer opportunities.
                     Don’t have the time to volunteer, but want to contribute services? Send us a message too ''',
-                style: TextStyle(fontSize: 16.0, color: Colors.teal[900]),
+                style: TextStyle(fontSize: 16.0, color: Color(0xFF0c4004)),
               ),
             ),
             MaterialButton(
-              color: Colors.pink,
+              color: Colors.blueGrey,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20.0))),
-              onPressed: () {},
+              onPressed: () {
+                
+              },
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
                 child: Text(

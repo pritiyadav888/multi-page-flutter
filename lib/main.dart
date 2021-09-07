@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/GetStartedPage/getstarted.dart';
+import 'package:flutter_application_1/HomePage/HomePage.dart';
 import 'package:flutter_application_1/LandingPage/LandingPage.dart';
 import 'package:flutter_application_1/Navbar/navbar.dart';
 import 'package:flutter_application_1/AboutUsPage/aboutus.dart';
+import 'package:flutter_application_1/projectspage/projects.dart';
+// ignore: unused_import
+import 'package:hexcolor/hexcolor.dart';
 
-void main() {
+Future<void> main() async {
+  
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
       '/': (context) => MyHomePage(),
-      '/second': (context) => AboutUs(),
-      // '/third': (context) => ThirdRoute(),
+      '/second': (context) => HomePage(),
+      '/third': (context) => PortfolioPage(),
+      '/fourth': (context) => AboutUs(),
+      '/fifth': (context) => GetStarted(),
+    
+      
     },
   ));
 }
@@ -21,7 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'LetsStopAids',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: "Montserrat"),
+      theme: ThemeData(primarySwatch: Colors.red, fontFamily: "Montserrat"),
       home: MyHomePage(),
     );
   }
@@ -33,17 +43,12 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            stops: [0.1, 0.4, 0.6, 0.9],
-            colors: [
-              Colors.yellow,
-              Colors.red,
-              Colors.white,
-              Colors.teal,
-            ],
-          ),
+          gradient: RadialGradient(
+                  colors: [Colors.white54, Colors.blueGrey,Colors.black38],
+                  center: Alignment(0.6, -0.3),
+                  focal: Alignment(0.3, -0.1),
+                  focalRadius: 1.0,
+                ),
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -54,54 +59,38 @@ class MyHomePage extends StatelessWidget {
                     vertical: 80.0, horizontal: 80.0),
                 child: LandingPage(),
               ),
-              // ElevatedButton(
-              //   child: Text('Click Me!'),
-              //   onPressed: () {
-              //     Navigator.pushNamed(context, '/second');
-              //   },
-              // ),
-              // ElevatedButton(
-              //   child: Text('Tap Me!'),
-              //   onPressed: () {
-              //     Navigator.pushNamed(context, '/third');
-              //   },
-              // ),
+              
+              ElevatedButton(
+                
+                child: Text(
+                  'Next!',
+                  style: TextStyle(color: Colors.indigo[900]),
+  
+                  ),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/fourth');
+                },
+              ),
+             
             ],
           ),
         ),
+
       ),
+      
     );
+  
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Click Me Page"),
-        backgroundColor: Colors.green,
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Back!'),
-        ),
-      ),
-    );
-  }
-}
-
-class ThirdRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Tap Me Page"),
-        backgroundColor: Colors.green,
-      ),
-    );
-  }
-}
+// class Next extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Next"),
+//         backgroundColor: Colors.green,
+//       ),
+//     );
+//   }
+// }

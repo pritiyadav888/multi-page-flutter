@@ -36,18 +36,25 @@ class DesktopNavbar extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
-                Text(
-                  "Home",
-                  style: TextStyle(color: Colors.indigo[900]),
+                 MaterialButton(
+                  color: Colors.blueGrey,
+                 
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/second');
+                  },
+                  child: Text(
+                    "Home",
+                    style: TextStyle(color: Colors.indigo[900]),
+                  ),
                 ),
                 SizedBox(
                   width: 30,
                 ),
                 MaterialButton(
-                  color: Colors.pink,
+                  color: Colors.blueGrey,
                  
                   onPressed: () {
-                    Navigator.pushNamed(context, '/second');
+                    Navigator.pushNamed(context, '/fourth');
                   },
                   child: Text(
                     "About Us",
@@ -57,19 +64,26 @@ class DesktopNavbar extends StatelessWidget {
                 SizedBox(
                   width: 30,
                 ),
-                Text(
-                  "Portfolio",
-                  style: TextStyle(color: Colors.indigo[900]),
+                MaterialButton(
+                  color: Colors.blueGrey,
+                 
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/third');
+                  },
+                  child: Text(
+                    "Portfolio",
+                    style: TextStyle(color: Colors.indigo[900]),
+                  ),
                 ),
                 SizedBox(
                   width: 30,
                 ),
                 MaterialButton(
-                  color: Colors.pink,
+                  color: Colors.blueGrey,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20.0))),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/second');
+                    Navigator.pushNamed(context, '/fifth');
                   },
                   child: Text(
                     "Get Started",
